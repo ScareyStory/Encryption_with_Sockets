@@ -10,6 +10,8 @@ compileall
 
 This compiles all 5 of the .c files using gcc.
 
+Plaintext files included for encrypting, feel free to write your own messages to encrypt!
+
 # otp_enc_d
 otp_enc_d: This program will run in the background as a daemon. Upon execution, otp_enc_d outputs an error if it cannot be run due to a network error, such as the ports being unavailable. Its function is to perform the actual encoding. This program will listen on a particular port/socket, assigned when it is first ran (see syntax below). 
 
