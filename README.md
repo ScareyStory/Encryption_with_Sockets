@@ -1,5 +1,4 @@
 # Encryption_with_Sockets 
-(Description paraphrased from Prof. Brewster's from Operating Systems 1 at Oregon State University) 
 
 This program uses localhost as the target IP address/host
 
