@@ -12,7 +12,7 @@ This compiles all 5 of the .c files using gcc.
 
 Plaintext files included for encrypting, feel free to write your own messages to encrypt!
 
-# otp_enc_d
+## otp_enc_d
 otp_enc_d: This program will run in the background as a daemon. Upon execution, otp_enc_d outputs an error if it cannot be run due to a network error, such as the ports being unavailable. Its function is to perform the actual encoding. This program will listen on a particular port/socket, assigned when it is first ran (see syntax below). 
 
 The child process of otp_enc_d must first check to make sure it is communicating with otp_enc (see otp_enc, below). After verifying that the connection to otp_enc_d is coming from otp_enc, then this child receives from otp_enc plaintext and a key via the communication socket (not the original listen socket). The otp_enc_d child will then write back the ciphertext to the otp_enc process that it is connected to via the same communication socket. 
@@ -29,7 +29,7 @@ listening_port is the port that otp_enc_d should listen on. You will always star
 
 $ otp_enc_d 57171 &
 
-# otp_enc
+## otp_enc
 otp_enc: This program connects to otp_enc_d, and asks it to perform a one-time pad style encryption as detailed above. By itself, otp_enc doesn’t do the encryption - otp_enc_d does. The syntax of otp_enc is as follows:
 
 otp_enc plaintext <key> <port>
@@ -45,13 +45,13 @@ If otp_enc receives key or plaintext files with ANY bad characters in them, or t
 
 otp_enc cannot connect to otp_dec_d, even if it tries to connect on the correct port.
 
-# otp_dec_d
+## otp_dec_d
 otp_dec_d: This program performs exactly like otp_enc_d, in syntax and usage. In this case, however, otp_dec_d will decrypt ciphertext it is given, using the passed-in ciphertext and key. Thus, it returns plaintext again to otp_dec.
 
-# otp_dec
+## otp_dec
 otp_dec: Similarly, this program will connect to otp_dec_d and will ask it to decrypt ciphertext using a passed-in ciphertext and key, and otherwise performs exactly like otp_enc, and is runnable in the same three ways. otp_dec cannot connect to otp_enc_d, even if it tries to connect on the correct port.
 
-# keygen
+## keygen
 keygen: This program creates a key file of specified length.
 
 The syntax for keygen is as follows:
