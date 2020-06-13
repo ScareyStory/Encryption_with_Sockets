@@ -1,7 +1,5 @@
 # Encryption_with_Sockets 
 
-This program uses localhost as the target IP address/host
-
 EXAMPLE RUN AT BOTTOM OF README
 
 After moving to the folder you have put the files in, run:
